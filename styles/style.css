@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+:root{
+       --wGrayishBlue: hsl(240, 78%, 98%);
+--LGrayBlue: hsl(234, 14%, 74%);
+--GBlue: hsl(233, 13%, 49%);
+--Dark-GrayishBlue: hsl(232, 13%, 33%);
+--g:hsl(236, 72%, 79%);
+-h:hsl(237, 63%, 64%);
+}
+body{
+    background: var(--wGrayishBlue);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    position: relative;
+}
+body::after{
+    content:'';
+    position: absolute;
+    left:0px;
+    bottom: 0;
+    width:300px;
+    height: 80%;
+    transform: translate(30px,400px);  
+    background: url('/images/bg-bottom.svg') no-repeat;
+    z-index: -2;
+}
+body::before{
+content:'';
+position: absolute;
+right:-150px;
+top:0;
+width:400px;
+height: 80%;
+background: url('/images/bg-top.svg') no-repeat;
+z-index: -2;
+}
+.container{
+    width:85%;
+    margin:0 auto;
+    overflow: hidden;
+}
+header{
+    padding-top:3rem;
+    color:var(--GBlue);
+    font-weight: 700;
+}
+header h3{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-transform: capitalize;
+}
+header p{
+    color:var(--LGrayBlue);
+}
+.switchHolder{
+    width:55px;
+    height: 28px;
+    border-radius: 15px;
+    background: linear-gradient( hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+  /*  transition:all ease-in 0.5s; */
+    opacity:1;
+    padding-top:2px;
+}
+.switchHolder:hover{
+    background: var(--LGrayBlue);
+}
+.switch-grp{
+    display: flex;
+    justify-content: center;
+   align-items: center;
+    margin-top:2rem;
+}
+.switch-grp p{
+    margin:0rem 3rem;
+}
+.switchHolder .switch{
+    background: white;
+    width: 23px;
+    height: 23px;
+    margin-left:3px;
+    border-radius:50%;
+    cursor: pointer;
+    transition:all ease-in 0.5s; 
+}
+.switchHolder.active .switch{
+    margin-left:28px;
+}
+.boxes{
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-gap:1.5rem;
+    margin:2rem  0;
+}
+.box{
+    text-align:center;
+    border:solid 1px none;
+    padding:1rem;
+    border-radius:10px;
+    box-shadow: 4px 4px 10px var(--LGrayBlue);
+}
+.box.box-w{
+    background: white;
+}
+.box.box-w h4,.box.box-w p{
+    color:var(--GBlue);
+}
+.box.box-w .txt-lg{
+    color:var(--Dark-GrayishBlue);
+}
+.box.box-b{
+    background: linear-gradient( hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    color:var(--wGrayishBlue)
+}
+.box h4, .box div {
+    margin-bottom:1rem;
+}
+.box h4{
+    font-size:1.5rem;
+}
+.box .txt-lg{
+    font-size: 3rem;
+} 
+.box .sm{
+    font-size: 2.5rem;
+} 
+.box .line{
+    border-top:1px solid var(--LGrayBlue);
+    padding-top:1rem;
+}
+.box .line.line-b{
+    border-bottom:1px solid var(--LGrayBlue);
+    padding-bottom:1rem;
+}
+/* buttons */
+.btn{
+    width:100%;
+    padding:0.8rem 2rem;
+    text-transform: uppercase;
+    outline:none;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top:2rem;
+    z-index: 1;
+}
+.btn-blue{
+    background: linear-gradient( hsl(236, 72%, 79%) , hsl(237, 63%, 64%));
+    color:var(--wGrayishBlue)
+}
+.btn-blue:hover{
+    background: white;
+    color:  hsl(237, 63%, 64%);
+    cursor: pointer;
+    border: hsl(237, 63%, 64%) 1px solid;
+
+}
+.btn-white:hover{
+    background: hsl(237, 63%, 64%) ;
+    color:  white;
+    cursor: pointer;
+    border: white 1px solid;
+
+}
+.btn-white{
+    color:  hsl(237, 63%, 64%);
+    background:var(--wGrayishBlue);
+}
+@media(min-width:750px){
+    .switch-grp{
+        justify-content: center;
+        align-items: center;
+    }
+    .boxes{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap:0rem;
+        margin:auto;
+        margin-top:4rem;
+        width:90%;
+    }
+
+    header{
+        margin-top:4rem;
+        margin-bottom:3rem;
+    }
+    .box.box-w{
+     /*   height: 90%; */
+        margin:1rem 0;
+        padding:1rem;;
+        z-index: 0;
+    }
+    .box.box-b{
+        padding:3rem 1rem;
+        height: 100%;
+        z-index: 1;
+    }
+    body::before{
+        right:0px;
+        top:0;
+    }
+}
